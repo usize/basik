@@ -41,7 +41,16 @@
 <body class="hbox">
     <div class="vbox">
         <button id="run" style="flex: none;">Run</button>
-        <textarea id="input"></textarea>
+        <textarea id="input">
+10 LET x = 1
+20 PRINT "hello world"
+30 GOTO 50
+40 LET y = 2
+50 IF x THEN 70
+60 LET z = 3
+70 INPUT a
+80 PRINT a
+        </textarea>
     </div>
 
     <pre id="output"></pre>
@@ -49,7 +58,9 @@
     <script src="lib/lexer.js"></script>
     <script src="lib/ast.js"></script>
     <script src="lib/parse.js"></script>
+    <script src="lib/orderProgram.js"></script>
     <script src="lib/repl.js"></script>
+    <script src="lib/eval.js"></script>
 </body>
 
 
