@@ -44,6 +44,7 @@
         <div class="hbox" style="flex:none">
             <select id="interpret-or-compile">
                 <option value="interpreter">Interpret</option>
+                <option value="debugger">Debugger</option>
                 <option value="compiler">Compile and go</option>
             </select>
             <button id="run">Run</button>
@@ -56,8 +57,17 @@
         <textarea id="input"></textarea>
     </div>
 
-    <pre id="output"></pre>
+    <div class="vbox">
+        <form id="debugger-controls" class="hbox" style="flex:none; display:none">
+            <label for="debugger-prompt" title="continue | step | break $PC | print $VAR">
+                debugger:
+            </label>
+            <input id="debugger-prompt" name="debugger-prompt" type="text" />
+        </form>
+        <pre id="output"></pre>
+    </div>
 
+    <script src="lib/debugger.js"></script>
     <script src="lib/lexer.js"></script>
     <script src="lib/ast.js"></script>
     <script src="lib/parse.js"></script>
