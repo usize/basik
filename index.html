@@ -36,6 +36,10 @@
          #output {
              padding: 1em;
          }
+
+         #debugger-output {
+             border-bottom: 1px #ccc solid;
+         }
         </style>
     </head>
 
@@ -58,11 +62,14 @@
     </div>
 
     <div class="vbox">
-        <form id="debugger-controls" class="hbox" style="flex:none; display:none">
-            <label for="debugger-prompt" title="continue | step | break $PC | print $VAR">
-                debugger:
-            </label>
-            <input id="debugger-prompt" name="debugger-prompt" type="text" />
+        <form id="debugger-controls" class="vbox" style="flex:none; display:none">
+            <div class="hbox">
+                <label for="debugger-prompt" title="continue | step | break $PC | print $VAR">
+                    debugger:
+                </label>
+                <input id="debugger-prompt" name="debugger-prompt" type="text" style="display:block"/>
+            </div>
+            <pre id="debugger-output"></pre>
         </form>
         <pre id="output"></pre>
     </div>
