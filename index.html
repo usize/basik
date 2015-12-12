@@ -1,48 +1,55 @@
+<!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8"/>
 
-<script src="lib/lexer.js"></script>
-<script src="lib/repl.js"></script>
+        <style>
+         * {
+             padding: 0;
+             margin: 0;
+         }
 
-<style>
-* {
-    padding: 0;
-    margin: 0;
-}
+         .hbox {
+             display: flex;
+             flex-direction: row;
+         }
 
-.hbox {
-    display: flex;
-    flex-direction: row;
-}
+         .vbox {
+             display: flex;
+             flex-direction: column;
+         }
 
-.vbox {
-    display: flex;
-    flex-direction: column;
-}
+         .hbox > *,
+         .vbox > * {
+             flex: 1;
+         }
 
-.hbox > *,
-.vbox > * {
-    flex: 1;
-}
+         body {
+             position: absolute;
+             top: 0;
+             left: 0;
+             height: 100%;
+             width: 100%;
+         }
 
-body {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-}
-
-#output {
-    padding: 1em;
-}
-</style>
+         #output {
+             padding: 1em;
+         }
+        </style>
+    </head>
 
 <body class="hbox">
     <div class="vbox">
-        <button onclick="processInput()" style="flex: none;">Run</button>
+        <button id="run" style="flex: none;">Run</button>
         <textarea id="input"></textarea>
     </div>
+
     <pre id="output"></pre>
+
+    <script src="lib/lexer.js"></script>
+    <script src="lib/ast.js"></script>
+    <script src="lib/parser.js"></script>
+    <script src="lib/repl.js"></script>
 </body>
 
 
