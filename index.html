@@ -40,7 +40,13 @@
 
 <body class="hbox">
     <div class="vbox">
-        <button id="run" style="flex: none;">Run</button>
+        <div class="hbox" style="flex:none">
+            <select id="interpret-or-compile">
+                <option value="interpreter">Interpret</option>
+                <option value="compiler">Compile and go</option>
+            </select>
+            <button id="run">Run</button>
+        </div>
         <textarea id="input">
 10 LET x = 1
 20 PRINT "hello world"
