@@ -36,6 +36,10 @@
          #output {
              padding: 1em;
          }
+
+         #debugger-output {
+             border-bottom: 1px #ccc solid;
+         }
         </style>
     </head>
 
@@ -55,15 +59,23 @@
             <option value="hello-world">Hello, World!</option>
             <option value="garbage">Random Garbage</option>
         </select>
-        <textarea id="input"></textarea>
+        <div class="hbox">
+            <pre id="debugger-gutter" style="display:none; flex:none;"></pre>
+            <textarea id="input"></textarea>
+        </div>
     </div>
 
     <div class="vbox">
-        <form id="debugger-controls" class="hbox" style="flex:none; display:none">
-            <label for="debugger-prompt" title="continue | step | break $PC | print $VAR">
-                debugger:
-            </label>
-            <input id="debugger-prompt" name="debugger-prompt" type="text" />
+        <form id="debugger-controls" class="vbox" style="flex:none; display:none">
+            <div class="hbox">
+                <label for="debugger-prompt"
+                       title="continue | step | break $PC | print $VAR | set $VAR $VAL"
+                       style="flex:none;">
+                    debugger:
+                </label>
+                <input id="debugger-prompt" name="debugger-prompt" type="text" style="display:block"/>
+            </div>
+            <pre id="debugger-output"></pre>
         </form>
         <pre id="output"></pre>
     </div>
