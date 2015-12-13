@@ -58,13 +58,18 @@
             <option value="garbage">Random Garbage</option>
             <option value="tic-tac-toe">Tic Tac Toe</option>
         </select>
-        <textarea id="input"></textarea>
+        <div class="hbox">
+            <pre id="debugger-gutter" style="display:none; flex:none;"></pre>
+            <textarea id="input"></textarea>
+        </div>
     </div>
 
     <div class="vbox">
         <form id="debugger-controls" class="vbox" style="flex:none; display:none">
             <div class="hbox">
-                <label for="debugger-prompt" title="continue | step | break $PC | print $VAR">
+                <label for="debugger-prompt"
+                       title="continue | step | break $PC | print $VAR | set $VAR $VAL"
+                       style="flex:none;">
                     debugger:
                 </label>
                 <input id="debugger-prompt" name="debugger-prompt" type="text" style="display:block"/>
