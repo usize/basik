@@ -1,12 +1,4 @@
-GLOWING-GUACAMOLE
+BASIK
 =================
 
-#### run it live <a href="http://mrrrgn.com/glowing-guacamole">here</a>
-
-#### discuss it in #glowing-guacamole at irc.mozilla.org
-
-####FAQ
-
-Q: What's with the weird name?
-
-A: It was an auto-generated suggestion by GitHub.
+This project has been abandoned but it's a good example of how one might implement a toy language in JavaScript!
